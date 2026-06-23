@@ -33,7 +33,7 @@ public record MoverConfig(ZonedDateTime startAt, ZonedDateTime endAt, Duration i
             var msg = "The end date/time must be after the start date/time.";
             throw new IllegalArgumentException(msg);
         }
-        if (interval.isPositive()) {
+        if (!interval.isPositive()) {
             var msg = "The interval must be positive.";
             throw new IllegalArgumentException(msg);
         }
